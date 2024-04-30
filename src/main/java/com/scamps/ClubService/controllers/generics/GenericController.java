@@ -82,7 +82,7 @@ public class GenericController<T extends GenericEntity<T>> implements ValidateCo
         try{
             T object = service.getById(id);
             if (object == null)
-                return ResponseController.errorResponse(HttpStatus.NOT_FOUND, ValuesConfig.getMessage(ResponseMessage.DEFAULTERROR));
+                return ResponseController.errorResponse(HttpStatus.NOT_FOUND, ValuesConfig.getMessage(ResponseMessage.DEFAULTNOTFOUND));
 
             service.delete(object);
             return ResponseController.successResponse(null, ValuesConfig.getMessage(ResponseMessage.DEFAULTSUCCESS));
